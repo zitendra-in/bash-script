@@ -18,13 +18,10 @@ mkdir -p "$BACKUP_DIR"
 
 ################### Create backup ###############
 # The archive does not contain the directory it contains only its contents.
-# When you want to archive the directory as a whole
 tar -czvf $BACKUP_DIR/$BACKUP_FILE -C $SOURCE_DIR .
 
-# The archive does contain the directory it contains only its contents.
-# When you want to archive only the contents
+#You only want to archive the contents of a directory without including the directory itself.
 #tar -czvf $BACKUP_DIR/$BACKUP_FILE $SOURCE_DIR
-
 
 ################### Verify the task #############
 
@@ -35,4 +32,5 @@ else
 	echo "Backup is failed !"
 	exit 1
 fi 
+
 
